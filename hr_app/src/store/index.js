@@ -4,7 +4,7 @@ import attendancePage from './attendance.json'
 import employee_payrollPage from './payroll_data.json'
 const store = createStore({
     state:{
-        employees: employee_infoPage.employeeInformation,
+        workers: employee_infoPage.employeeInformation,
         employeesAttendance: attendancePage.attendanceAndLeave,
         employeePayroll:employee_payrollPage.payrollData
     },
