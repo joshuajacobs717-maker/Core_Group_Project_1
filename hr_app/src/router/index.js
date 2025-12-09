@@ -1,18 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Attendance from '@/views/Attendance.vue'
-import EmployeeInfo from '@/views/EmployeeInfo.vue'
+import Employee from '@/views/EmployeeInfo.vue'
 import PayrollDashboard from '@/views/PayrollDashboard.vue'
-import PayrollTable from '@/views/PayrollTable.vue'
-import Dashboard from '@/views/Dashboard.vue'
+import Home from '@/views/Dashboard.vue'
+import Login from '@/views/Login.vue'
+import About from '@/views/About.vue'
 
 const routes = [
- 
+  { path: '/', redirect: '/login' },
+  { path: '/login', component: Login },
   { path: '/attendance', component: Attendance },
-  { path: '/employeeinfo', component: EmployeeInfo },
+  { path: '/employeeinfo', component: Employee },
   { path: '/payroll', component: PayrollDashboard },
-  { path: '/payrolltable', component: PayrollTable },
-  { path: '/dashboard', component: Dashboard },
+  { path: '/home', component: Home },
+  { path: '/about', component: About },
 ]
 
 const router = createRouter({

@@ -1,11 +1,16 @@
 <script setup>
-defineProps({
-  payroll: Array
+const props = defineProps({
+  payroll: {
+    type: Array,
+    default: () => []
+  }
 })
 
+const emit = defineEmits(['view-payslip'])
 </script>
 
 <template>
+
   <table class="payroll-table">
     <thead>
       <tr>
@@ -18,15 +23,49 @@ defineProps({
     </thead>
 
     <tbody>
-      <tr v-for="row in payroll" :key="row.employeeId">
-        <td>{{ row.employeeId }}</td>
-        <td>{{ row.hoursWorked }}</td>
+      <tr v-if="!props.payroll || props.payroll.length === 0">
+        <td colspan="5" class="text-center">No payroll records</td>
+      </tr>
+
+      <tr class="info-row" v-for="row in props.payroll" :key="row.employeeId">
+        <td>No.{{ row.employeeId }}</td>
+        <td>{{ row.hoursWorked }} hours</td>
         <td>{{ row.leaveDeductions }}</td>
-        <td>{{ row.finalSalary }}</td>
+        <td>R{{ row.finalSalary }}</td>
         <td>
-          <button @click="$emit('view-payslip', row)">View</button>
+          <button type="button" class="view-btn" @click="emit('view-payslip', row)">View</button>
         </td>
       </tr>
     </tbody>
   </table>
 </template>  
+
+<style>
+.payroll-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #628141;
+  color: white;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.view-btn {
+  padding: 6px 12px;
+  background: #628141;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+.info-row:hover {
+  background-color: #ebd5ab;
+
+}
+</style>

@@ -1,4 +1,4 @@
-<script setup>
+ <script setup>
 
 </script>
 
@@ -19,20 +19,31 @@
 <style scoped>
 #card_container{
     border: none;
-    background-color: aqua;
+    background-color: #8BAE66;
     border-radius: 5px;
     width: 500px;
     height: 500px;
     text-align: center;
-    padding: 10px;
+    padding: 2px;
+    
+   
 }
 #card{
-    background-color: white;
+    background-color: #efefef;
+    padding: 5px;
+    margin-top: 70px;
+    margin-left: 30px;
+    margin-right: 30px;
+    height: 350px;
+
+    
 }
 input{
     border: none;
     border-radius: 5px;
-    color: aqua;
-    background-color: white;
+    color: #628141;
+    background-color: #EBD5AB;
+    padding: 5px;
+
 }
 </style>
