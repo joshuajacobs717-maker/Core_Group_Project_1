@@ -55,7 +55,7 @@ npm install jspdf
 Nmp run dev
 
 Open:
-https://github.com/joshuajacobs717-maker/Core_Group_Project_1
+https://github.com/joshuajacobs717-maker/Core_Group_Project_1.git
 
 Team Contributions
 
