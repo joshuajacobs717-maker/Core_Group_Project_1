@@ -2,14 +2,13 @@
 import { ref, computed, onMounted } from "vue";
 import Chart from "chart.js/auto";
 
-// Import JSON data
+
 import payrollDataFile from "@/data/payroll_data.json";
 import attendanceDataFile from "@/data/attendance.json";
 
 const payroll = ref(payrollDataFile.payrollData);
 const attendance = ref(attendanceDataFile.attendanceAndLeave);
 
-// --- COMPUTED METRICS --- //
 const totalEmployees = computed(() => payroll.value.length);
 
 const averageSalary = computed(() => {
@@ -38,7 +37,6 @@ const attendancePercentage = computed(() => {
   return Math.round((presentCount / totalRecords) * 100);
 });
 
-// --- CHART --- //
 let chartRef = ref(null);
 
 onMounted(() => {
@@ -52,6 +50,7 @@ onMounted(() => {
         {
           label: "Final Salary",
           data: payroll.value.map((e) => e.finalSalary),
+          backgroundColor: "#c9ff90", 
         },
       ],
     },
@@ -65,7 +64,6 @@ onMounted(() => {
 
 <template>
   <div class="dashboard_container">
-
     <!-- SUMMARY CARDS -->
     <div class="cards_container">
       <div class="card">
@@ -88,7 +86,6 @@ onMounted(() => {
         <p>{{ attendancePercentage }}%</p>
       </div>
     </div>
-
     <!-- SALARY CHART -->
     <div class="chart_card">
       <h2>Salary Overview</h2>
@@ -96,7 +93,6 @@ onMounted(() => {
         <canvas id="salaryChart"></canvas>
       </div>
     </div>
-
     <!-- ATTENDANCE TABLE -->
     <div class="table_card">
       <h2>Attendance (Last 5 Days)</h2>
@@ -123,7 +119,6 @@ onMounted(() => {
         </tbody>
       </table>
     </div>
-
     <!-- LEAVE REQUESTS -->
     <div class="leave_card">
       <h2>Leave Requests</h2>
@@ -143,17 +138,18 @@ onMounted(() => {
           </ul>
         </div>
       </div>
-
     </div>
-
   </div>
+
 </template>
 
 <style scoped>
+
 .dashboard_container {
   padding: 20px;
   display: grid;
   gap: 20px;
+  
 }
 
 /* Summary cards grid */
@@ -167,7 +163,7 @@ onMounted(() => {
   background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0px 6px 7px #8BAE66;
   text-align: center;
 }
 
@@ -186,7 +182,7 @@ onMounted(() => {
   background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 12px #8BAE66;
 }
 
 .chart_box {
@@ -199,7 +195,7 @@ onMounted(() => {
   background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 12px #8BAE66;
 }
 
 table {
@@ -211,6 +207,10 @@ table {
 th, td {
   padding: 10px;
   border-bottom: 1px solid #ddd;
+}
+
+tr:hover{
+  background-color: #EBD5AB;
 }
 
 .Present {
@@ -228,7 +228,11 @@ th, td {
   background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 12px #8BAE66;
+}
+
+.leave_item:hover{
+  background-color: #ddd;
 }
 
 .leave_list {
@@ -241,6 +245,7 @@ th, td {
   background: #f9f9f9;
   padding: 15px;
   border-radius: 10px;
+  box-shadow: 0px 4px 12px #8BAE66;
 }
 
 .Approved {

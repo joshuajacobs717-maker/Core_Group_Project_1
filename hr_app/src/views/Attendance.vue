@@ -48,7 +48,7 @@ function declineLeave(attentId, index) {
 
     <!-- Sorting Dropdown -->
     <div class="sort-box">
-      <label>Sort Leave By:</label>
+      <label>Sort Leave By: </label>
       <select class="select-bar" v-model="sortOption">
         <option value="pending-first">Pending → Approved → Denied</option>
         <option value="approved-first">Approved → Pending → Denied</option>
@@ -127,11 +127,15 @@ function declineLeave(attentId, index) {
 }
 
 .select-bar{
-  border: none;
+  border-color: #628141;
   border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.select-bar:hover{
   color: white;
   background-color: #628141;
-  margin-bottom: 10px;
 }
 
 
@@ -139,7 +143,11 @@ function declineLeave(attentId, index) {
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 30px;
+}
+
+.employee-card:hover{
+  transform: scale(1.05);
 }
 
 .employee-card {
@@ -147,10 +155,10 @@ function declineLeave(attentId, index) {
   border: 1px solid #e6e6e7;
   border-radius: 8px;
   padding: 12px;
-  width: 20%; /* smaller cards, 5 per row approx */
+  width: 20%; 
   box-shadow: 0 5px 6px #628141;
   box-sizing: border-box;
-  font-size: 0.85em; /* smaller text inside cards */
+  font-size: 0.85em; 
 }
 
 .employee-card h2 {

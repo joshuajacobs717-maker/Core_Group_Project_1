@@ -54,12 +54,12 @@ const openPayslip = (employee) => {
 <style>
 .payroll-table {
   width: 100%;
-  border-collapse: collapse; /* remove double borders */
+  border-collapse: collapse; 
 }
 
 th, td {
-  padding: 12px 15px;       /* space inside each cell */
-  text-align: left;         /* aligns content under header */
+  padding: 12px 15px;       
+  text-align: left;        
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -70,11 +70,11 @@ th {
 }
 
 td.numeric {
-  text-align: right;       /* optional: for numbers like salary or hours */
+  text-align: right;      
 }
 
 tr:hover {
-  background-color: #f1f5f9; /* subtle hover effect */
+  background-color: #f1f5f9; 
 }
 
 h1, h2{

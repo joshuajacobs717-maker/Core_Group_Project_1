@@ -69,6 +69,10 @@
   margin-bottom: 40px;
 }
 
+h1{
+  color: white;
+}
+
 /* General section layout */
 .section {
   margin-bottom: 40px;
@@ -87,7 +91,7 @@
 /* Warning section */
 .warning {
   background: #fff4e3;
-  border-left: 5px solid #d9822b;
+  border-left: 5px solid #628141;
 }
 
 /* Section headers */

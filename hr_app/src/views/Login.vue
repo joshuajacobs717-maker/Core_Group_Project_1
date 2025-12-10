@@ -4,14 +4,11 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-// form fields
 const username = ref("");
 const password = ref("");
 
-// feedback
 const errorMessage = ref("");
 
-// hard-coded credentials
 const validUser = {
   username: "Group 8",
   password: "4ofus"
@@ -20,7 +17,7 @@ const validUser = {
 function login() {
   if (username.value === validUser.username && password.value === validUser.password) {
     errorMessage.value = "";
-    router.push("/home");   // redirect to dashboard
+    router.push("/home");
   } else {
     errorMessage.value = "Invalid username or password!";
   }
@@ -29,7 +26,10 @@ function login() {
 
 <template>
   <div class="login-page">
-
+    <div id="greeting">
+    <h1>Welcome</h1>
+    <h1>Back!</h1>
+    </div>
     <div class="login-box">
 
       <h1>HR System Login</h1>
@@ -56,6 +56,12 @@ function login() {
 </template>
 
 <style scoped>
+#greeting{
+  margin-right: 100px;
+  animation: phase 0.8s ease-in;
+}
+
+
 .login-page {
   display: flex;
   justify-content: center;
@@ -71,6 +77,13 @@ function login() {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   align-items: center;
+  animation: phase 0.8s ease-in;
+}
+
+@keyframes phase{ 
+  0%{opacity: 0;}
+  50%{opacity: 0.5;}
+  100%{opacity: 1;}
 }
 
 h1 {

@@ -8,7 +8,7 @@ const downloadPayslip = () => {
   doc.setFontSize(20)
   doc.text("Employee Payslip", 20,20)
 
-    doc.setFontSize(12)
+  doc.setFontSize(12)
   doc.text(`Employee ID: No.${e.employeeId}`, 20, 40)
   doc.text(`Hours Worked: ${e.hoursWorked} hours`, 20, 50)
   doc.text(`Leave Deductions: ${e.leaveDeductions}`, 20, 60)

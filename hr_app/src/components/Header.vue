@@ -5,24 +5,28 @@ import { ref } from "vue";
 <template>
   <div id="nav">
     <router-link to="/home" class="link">
-      <span class="icon">⌂</span>
+      <span class="icon"><i class="fa-solid fa-house"></i></span>
       <span class="link-text">Home</span>
     </router-link>
     <router-link to="/attendance" class="link">
-      <span class="icon">🗓</span>
+      <span class="icon"><i class="fa-solid fa-calendar-days"></i></span>
       <span class="link-text">Attendance</span>
     </router-link>
     <router-link to="/employeeinfo" class="link">
-      <span class="icon">𐀪</span>
+      <span class="icon"><i class="fa-solid fa-address-card"></i></span>
       <span class="link-text">Employee Info</span>
     </router-link>
     <router-link to="/payroll" class="link">
-      <span class="icon">$</span>
+      <span class="icon"><i class="fa-solid fa-money-bills"></i></span>
       <span class="link-text">Payroll</span>
     </router-link>
     <router-link to="/about" class="link">
-      <span class="icon">ℹ</span>
+      <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
       <span class="link-text">About</span>
+    </router-link>
+    <router-link to="/login" class="link">
+      <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+      <span class="link-text">Logout</span>
     </router-link>
   </div>
 </template>
