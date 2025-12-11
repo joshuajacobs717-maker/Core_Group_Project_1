@@ -54,6 +54,10 @@ npm install charts.js
 npm install jspdf
 Nmp run dev
 
+Credentials to login:
+Username: Group 8
+Password: 4ofus
+
 Open:
 https://github.com/joshuajacobs717-maker/Core_Group_Project_1.git
 
